@@ -7,15 +7,10 @@
  */
 int main(void)
 {
-	char a;
-	int b;
-	long int c;
-	long long int d;
-	float e;
-	puts("Size of a char: %ul byte(s)",(unsigned long)sizeof(a));
-	puts("Size of an int: %ul byte(s)",(unsigned long)sizeof(b));
-	puts("Size of a long int: %ul byte(s)",(unsigned long)sizeof(c));
-	puts("Size of a long long int: %ul byte(s)",(unsigned long)sizeof(d));
-	puts("Size of a float: %ul byte(s)",(unsigned long)sizeof(e));
+	printf("Size of a char: %d byte(s)\n",sizeof(char));
+	printf("Size of an int: %d byte(s)\n",sizeof(int));
+	printf("Size of a long int: %d byte(s)\n",sizeof(long int));
+	printf("Size of a long long int: %d byte(s)\n",sizeof(long long int));
+	printf("Size of a float: %d byte(s)\n",sizeof(float));
 	return (0);
 }
