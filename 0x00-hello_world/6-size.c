@@ -7,10 +7,15 @@
  */
 int main(void)
 {
-	puts("Size of a char: 1 byte(s)");
-	puts("Size of an int: 4 byte(s)");
-	puts("Size of a long int: 4 byte(s)");
-	puts("Size of a long long int: 8 byte(s)");
-	puts("Size of a float: 4 byte(s)");
+	char a;
+	int b;
+	long int c;
+	long long int d;
+	float e;
+	puts("Size of a char: %ul byte(s)",(unsigned long)sizeof(a));
+	puts("Size of an int: %ul byte(s)",(unsigned long)sizeof(b));
+	puts("Size of a long int: %ul byte(s)",(unsigned long)sizeof(c));
+	puts("Size of a long long int: %ul byte(s)",(unsigned long)sizeof(d));
+	puts("Size of a float: %ul byte(s)",(unsigned long)sizeof(e));
 	return (0);
 }
