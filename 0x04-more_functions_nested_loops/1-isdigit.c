@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include "main.h"
 
-/*
+/**
  * _isdigit - check if c is digit
  *
  * @c: type int
