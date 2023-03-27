@@ -11,4 +11,6 @@ void _puts(char *str);
 
 void _putchar(int n);
 
+void print_rev(char *s);
+
 #endif /* main.h */
