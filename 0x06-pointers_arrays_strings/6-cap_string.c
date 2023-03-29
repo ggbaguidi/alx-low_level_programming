@@ -1,4 +1,6 @@
+#include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "main.h"
 
 /**
@@ -12,18 +14,31 @@
  */
 char *cap_string(char *s)
 {
-	int l = strlen(s), i;
+	int i;
 
-	for (i = 0; i < l; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (!('a' <= *(s + i) && *(s + i) <= 'z'))
+		if ((s[i - 1] == ' ' || s[i - 1] == '\n'
+		|| s[i - 1] == '\t' || s[i - 1] == ','
+		|| s[i - 1] == ';' || s[i - 1] == '!'
+		|| s[i - 1] == '?' || s[i - 1] == '"'
+		|| s[i - 1] == '(' || s[i - 1] == ')'
+		|| s[i - 1] == '{' || s[i - 1] == '}'
+		|| s[i - 1] == '.')
+		&& (s[i] >= 'a' && s[i] <= 'z'))
 		{
-			if (!('A' <= *(s + i) && *(s + i) <= 'Z'))
-			{
-				if ('a' <= *(s + i + 1) && *(s + i + 1) <= 'z')
-					*(s + i + 1) -= 32;
-			}
+			s[i] = s[i] - 32;
 		}
+		else if ((s[0] >= 97 && s[0] <= 122))
+		{
+			s[0] = s[0] - 32;
+		}
+		else
+		{
+			s[i] = s[i];
+		}
+		i++;
 	}
 	return (s);
 }
