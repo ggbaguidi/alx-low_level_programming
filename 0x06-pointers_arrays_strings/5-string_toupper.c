@@ -6,6 +6,8 @@
  *
  * @str: type char pointer
  *
+ * Owned by Guy A GBAGUIDI
+ *
  * Return: char pointer
  */
 char *string_toupper(char *str)
