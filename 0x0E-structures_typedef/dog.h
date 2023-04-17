@@ -11,7 +11,8 @@
  */
 struct dog
 {
-	char *name;
-	float *age;
-	char *owner;
+	char *name = NULL;
+	float *age = NULL;
+	char *owner = NULL;
 };
+#endif
