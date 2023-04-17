@@ -14,4 +14,4 @@ struct dog
 	char *name = NULL;
 	float *age = NULL;
 	char *owner = NULL;
-}
+};
