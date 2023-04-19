@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include "3-calc.h"
 
 /**
@@ -58,7 +57,7 @@ int op_div(int a, int b)
 {
 	if (b == 0)
 	{
-		write(1, "Error\n", 6);
+		printf("Error\n");
 		exit(100);
 	}
 	return (a / b);
@@ -77,7 +76,7 @@ int op_mod(int a, int b)
 {
 	if (b == 0)
 	{
-		write(1, "Error\n", 6);
+		printf("Error\n");
 		exit(100);
 	}
 	return (a % b);
