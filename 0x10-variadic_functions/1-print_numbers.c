@@ -16,4 +16,5 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf(" ");
 	}
 	printf("%d\n", va_arg(ap, n-1));
+	va_end(ap)
 }
