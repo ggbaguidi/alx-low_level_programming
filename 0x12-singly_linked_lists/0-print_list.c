@@ -9,22 +9,17 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t *p = (list_t*)malloc(sizeof(list_t));
 	size_t cpt = 0;
 
-	p->str = h->str;
-	p->len = h->len;
-	p->next = h->next;
-	while (p != NULL)
+	while (h != NULL)
 	{
-		if (p->str == NULL)
+		if (h->str == NULL)
 			printf("[0] (nil)\n");
 		else
-			printf("[%d] %s\n", p->len, p->str);
+			printf("[%d] %s\n", h->len, h->str);
 		cpt++;
-		p = p->next;
+		h = h->next;
 	}
-	free(p);
 	return (cpt);
 }
 
