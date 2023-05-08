@@ -26,7 +26,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	numread = read(inputFd, buffer, letters);
 	if (numread == -1)
 		return (0);
-	if ((numwritten = write(1, buffer, numread)) != numread)
+	numwritten = write(1, buffer, numread);
+	if ((numwritten == -1) | (numwritten != numread))
 		return (0);
 	free(buffer);
 	return (numwritten);
