@@ -15,7 +15,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buffer = malloc(sizeof(char) * letters);
 	ssize_t numread, numwr, inputFd;
 
-	openFlags = O_RDWR;
+	openFlags = O_RDONLY;
 
 	if ((filename == NULL) | (buffer == NULL))
 		return (0);
