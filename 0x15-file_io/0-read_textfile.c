@@ -17,12 +17,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	openFlags = O_RDONLY;
 
-	if ((filename == NULL) | (buffer == NULL))
+	if ((filename == NULL) || (buffer == NULL))
 		return (0);
 	inputFd = open(filename, openFlags);
 	numread = read(inputFd, buffer, letters);
 	numwr = write(1, buffer, numread);
-	if ((inputFd == -1) | (numread == -1) | (numwr == -1) | (numwr != numread))
+	if ((inputFd == -1) || (numread == -1) || (numwr == -1) || (numwr != numread))
 	{
 		free(buffer);
 		return (0);
