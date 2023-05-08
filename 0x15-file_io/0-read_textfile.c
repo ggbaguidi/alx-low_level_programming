@@ -13,22 +13,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int inputFd, openFlags;
 	char *buffer = malloc(sizeof(char) * letters);
-	ssize_t numread, numwritten;
+	ssize_t numread, numwr;
 
 	openFlags = O_RDWR;
 
-	if (filename == NULL)
+	if ((filename == NULL) | (buffer == NULL))
 		return (0);
 	inputFd = open(filename, openFlags);
-	if (inputFd == -1)
-		return (0);
-
 	numread = read(inputFd, buffer, letters);
-	if (numread == -1)
+	numwr = write(1, buffer, numread);
+	if ((inputFd == -1) | (numread == -1) | (numwr == -1) | (numwr != numread))
+	{
+		free(buffer);
 		return (0);
-	numwritten = write(1, buffer, numread);
-	if ((numwritten == -1) | (numwritten != numread))
-		return (0);
+	}
 	free(buffer);
-	return (numwritten);
+	close(inputFd);
+	return (numwr);
 }
