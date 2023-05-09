@@ -11,7 +11,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int openFlags = O_APPEND;
+	int openFlags = O_WRONLY | O_APPEND;
 	ssize_t inputFd, numwr;
 
 	if (filename == NULL)
@@ -26,4 +26,10 @@ int append_text_to_file(const char *filename, char *text_content)
 		close(inputFd);
 		return (1);
 	}
+	if (inputFd == -1)
+	{
+		return (-1);
+	}
+	close(inputFd);
+	return (1);
 }
